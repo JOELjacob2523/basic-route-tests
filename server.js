@@ -8,7 +8,8 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/template', (req, res) => {
-  res.render('index')});
+  res.render('index');
+});
 
 app.use(express.json());
 
