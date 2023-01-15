@@ -1,4 +1,9 @@
-module.exports = [{
-    name1 : 'David',
-    name2 : 'Test',
-}];
+module.exports = [
+    {
+    helloT : 'Hello',
+    name : 'Test'
+},{
+    helloD : 'Hello',
+    name : 'David'
+}
+];
