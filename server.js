@@ -1,17 +1,12 @@
 ﻿const express = require('express');
 const app = express();
-const name = require('./name');
 
 // Serve all static files from the public folder.
 app.use(express.static('public'));
 
-app.set('view engine', 'ejs');
-
-app.get('/template', (req, res) => {
-  res.render('index', {name});
-});
-
 app.use(express.json());
+
+app.set('view engine', 'ejs');
 
 // Handle the login form submission.
 app.post('/login', (req, res) => {
@@ -26,6 +21,10 @@ app.post('/login', (req, res) => {
     res.send(error.message);
   }
 
+});
+
+app.get('/template', (req, res) => {
+  res.render('index.ejs', req.query);
 });
 
 // Export the app so that it can be started in the tests.
